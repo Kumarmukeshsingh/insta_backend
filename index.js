@@ -25,6 +25,7 @@ app.use(urlencoded({ extended: true }));
 
 const corsOptions = {
    origin: 'https://localhost:5173',
+   methods: "GET,POST,PUT,DELETE,PATCH,HEAD",
    Credential: true,
 }
 

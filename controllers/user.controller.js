@@ -6,6 +6,15 @@ import cloudinary from "../utils/cloudinary.js";
 import { Post } from "../models/post.model.js";
 
 
+export const getAllUser = async (req, res) => {
+   const user = await User.find();
+   if (!user) {
+      res.status(404).json({ message: "Not found" })
+   }
+   res.status(200).json({ user, success: true })
+
+}
+
 export const register = async (req, res) => {
    try {
       const { username, email, password } = req.body;
@@ -43,6 +52,7 @@ export const register = async (req, res) => {
    }
 
 }
+
 
 export const login = async (req, res) => {
    try {

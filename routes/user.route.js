@@ -1,5 +1,5 @@
 import express from "express";
-import { editPorfile, followOrUnfollow, getProfile, getSuggestedUsers, login, logout, register } from "../controllers/user.controller.js";
+import { editPorfile, followOrUnfollow, getAllUser, getProfile, getSuggestedUsers, login, logout, register } from "../controllers/user.controller.js";
 import isAuthenticated from "../middlewares/isAuthenticated.js";
 import upload from "../middlewares/multer.js";
 
@@ -9,6 +9,7 @@ const router = express.Router();
 router.route('/register').post(register);
 router.route('/login').post(login);
 router.route('/logout').get(logout);
+router.route('/allUser').get(getAllUser);
 router.route('/:id/profile').get(isAuthenticated, getProfile);
 router.route('/profile/edit').post(isAuthenticated, upload.single('profilePicture'), editPorfile);
 router.route('/suggested').get(isAuthenticated, getSuggestedUsers);
