@@ -26,3 +26,5 @@ http://localhost:8081/api/v1/post/:id/bookmark
 # Message api
 http://localhost:8081/api/v1/message/send/id
 http://localhost:8081/api/v1/message/all/:id
+
+https://github.com/Surendrakumarpatel/instaclone
